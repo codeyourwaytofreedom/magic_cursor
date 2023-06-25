@@ -1,10 +1,39 @@
 .homie {
   height: 100vh;
+}
+
+#centercenter {
   background: radial-gradient(circle at center, var(--focus_color), var(--transition_color));
-  background: radial-gradient(circle at top right, var(--focus_color), var(--transition_color));
-  background: radial-gradient(circle at top left, var(--focus_color), var(--transition_color));
-  background: radial-gradient(circle at bottom left, var(--focus_color), var(--transition_color));
-  background: radial-gradient(circle at bottom right, var(--focus_color), var(--transition_color));
-  background: radial-gradient(circle at right, var(--focus_color), var(--transition_color));
+}
+
+#topcenter {
+  background: radial-gradient(circle at center 0%, var(--focus_color), var(--transition_color));
+}
+
+#bottomcenter {
+  background: radial-gradient(circle at center 100%, var(--focus_color), var(--transition_color));
+}
+
+#leftleft {
   background: radial-gradient(circle at left, var(--focus_color), var(--transition_color));
+}
+
+#lefttop {
+  background: radial-gradient(circle at left 0%, var(--focus_color), var(--transition_color));
+}
+
+#leftbottom {
+  background: radial-gradient(circle at left 100%, var(--focus_color), var(--transition_color));
+}
+
+#rightright {
+  background: radial-gradient(circle at right, var(--focus_color), var(--transition_color));
+}
+
+#righttop {
+  background: radial-gradient(circle at right 0%, var(--focus_color), var(--transition_color));
+}
+
+#rightbottom {
+  background: radial-gradient(circle at right 100%, var(--focus_color), var(--transition_color));
 }/*# sourceMappingURL=Homie.module.css.map */

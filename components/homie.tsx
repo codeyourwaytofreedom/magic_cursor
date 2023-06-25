@@ -4,9 +4,6 @@ import h from "../styles/Homie.module.css";
 
 const Homie = () => {
     useEffect(() => {
-/*         const {innerWidth, innerHeight} = window;
-        console.log(innerWidth,innerHeight) */
-
         const moving = (event:MouseEvent) => {
         const {innerWidth, innerHeight} = window;
           if(event.clientX < innerWidth/3){
@@ -52,7 +49,7 @@ const Homie = () => {
       }, []);
 
     return ( <>
-        <div className={h.homie}>
+        <div className={h.homie} id={h.centercenter}>
             Magic starts
         </div>
                 

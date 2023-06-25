@@ -9,6 +9,8 @@
   );
   --focus_color: #FFFFE0;
   --transition_color: #C0C0C0;
+  --focus_color: red;
+  --transition_color: yellow;
 }
 
 
