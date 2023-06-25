@@ -4,12 +4,11 @@
 
 #centercenter{
     background: radial-gradient(circle at center,var(--focus_color), var(--transition_color));
-
 }
-#topcenter{
+#centertop{
     background: radial-gradient(circle at center 0%,var(--focus_color), var(--transition_color));
 }
-#bottomcenter{
+#centerbottom{
     background: radial-gradient(circle at center 100%,var(--focus_color), var(--transition_color));
 }
 
@@ -22,7 +21,6 @@
 }#leftbottom{
     background: radial-gradient(circle at left 100%, var(--focus_color), var(--transition_color));
 }
-
 
 
 #rightright{
