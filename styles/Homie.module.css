@@ -5,4 +5,6 @@
   background: radial-gradient(circle at top left, var(--focus_color), var(--transition_color));
   background: radial-gradient(circle at bottom left, var(--focus_color), var(--transition_color));
   background: radial-gradient(circle at bottom right, var(--focus_color), var(--transition_color));
+  background: radial-gradient(circle at right, var(--focus_color), var(--transition_color));
+  background: radial-gradient(circle at left, var(--focus_color), var(--transition_color));
 }/*# sourceMappingURL=Homie.module.css.map */
