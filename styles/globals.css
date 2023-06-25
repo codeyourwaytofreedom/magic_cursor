@@ -7,6 +7,8 @@
     #0071ff33 160deg,
     transparent 360deg
   );
+  --focus_color: #FFFFE0;
+  --transition_color: #C0C0C0;
 }
 
 
