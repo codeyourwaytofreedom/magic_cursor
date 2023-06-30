@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import h from "../styles/Homie.module.css";
 
@@ -60,7 +61,11 @@ const Homie = () => {
 
     return ( <>
         <div className={h.homie} id={h[`${shade}`]}>
-            Magic starts
+            <div className={h.homie_scales}>
+                <Image  src={"/holders.png"} alt={"scale"} width={600} height={400}/>
+                <Image id={h.center}  src={"/center.png"} alt={"scale"} width={600} height={400}/>
+
+            </div>
         </div>
                 
     </> );
