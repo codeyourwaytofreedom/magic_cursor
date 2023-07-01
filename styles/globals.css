@@ -9,7 +9,7 @@
   );
   --focus_color: #FFFFE0;
   --transition_color: #C0C0C0;
-  --focus_color: whitesmoke;
+  --focus_color: rgb(208, 237, 248);
   --transition_color: skyblue;
 }
 

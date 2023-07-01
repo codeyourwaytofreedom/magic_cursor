@@ -4,12 +4,24 @@
 }
 .homie_scales {
   position: fixed;
-  top: -40px;
+  top: -20px;
   left: 2%;
   width: 200px;
   height: 200px;
   display: grid;
   align-items: center;
+}
+.homie_scales_double {
+  position: relative;
+}
+.homie_scales_double #moneyleft, .homie_scales_double #moneyright {
+  position: absolute;
+  top: -40px;
+  width: 40px;
+  height: 40px;
+}
+.homie_scales_double #moneyright {
+  right: 10px;
 }
 .homie_scales img {
   -o-object-fit: contain;
@@ -26,7 +38,7 @@
 }
 .homie_navbar {
   height: 132px;
-  border: 2px solid green;
+  border-bottom: 1px solid whitesmoke;
 }
 
 #centercenter {
