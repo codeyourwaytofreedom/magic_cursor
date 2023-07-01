@@ -3,12 +3,11 @@
   position: relative;
 }
 .homie_scales {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 600px;
-  height: 400px;
-  border: 2px solid red;
+  position: fixed;
+  top: -40px;
+  left: 2%;
+  width: 200px;
+  height: 200px;
   display: grid;
   align-items: center;
 }
@@ -17,14 +16,17 @@
      object-fit: contain;
   width: 100%;
   height: auto;
-  border: 2px solid black;
 }
 .homie_scales #center {
-  width: 20%;
-  height: auto;
   position: absolute;
-  left: 40%;
-  top: 33%;
+  width: 25%;
+  height: auto;
+  left: 37.5%;
+  top: 34%;
+}
+.homie_navbar {
+  height: 132px;
+  border: 2px solid green;
 }
 
 #centercenter {

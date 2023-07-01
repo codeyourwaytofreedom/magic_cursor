@@ -5,9 +5,17 @@ import h from "../styles/Homie.module.css";
 
 const Homie = () => {
     const [shade, setShade] = useState<string>("centercenter");
+    const [slope,setSlope] = useState<number>(0);
+
     useEffect(() => {
         const moving = (event:MouseEvent) => {
         const {innerWidth, innerHeight} = window;
+        const height_percentage = event.clientY < innerHeight/2 ? event.clientY/innerHeight/2 * -80 
+                                  : -(20 + (20 - event.clientY/innerHeight/2 * 80));
+        setSlope(height_percentage);
+
+        console.log(height_percentage);
+
           if(event.clientX < innerWidth/3){
              if(event.clientY < innerHeight/3){
                 console.log("left top");
@@ -62,10 +70,13 @@ const Homie = () => {
     return ( <>
         <div className={h.homie} id={h[`${shade}`]}>
             <div className={h.homie_scales}>
-                <Image  src={"/holders.png"} alt={"scale"} width={600} height={400}/>
+                <Image id={h.holders} style={{ transform: `rotate(${slope}deg)` }}  src={"/holders.png"} alt={"scale"} width={600} height={400}/>
                 <Image id={h.center}  src={"/center.png"} alt={"scale"} width={600} height={400}/>
-
             </div>
+            <div className={h.homie_navbar}>
+                
+            </div>
+            <h1>{slope}</h1>
         </div>
                 
     </> );
