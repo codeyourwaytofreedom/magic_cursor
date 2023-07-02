@@ -7,7 +7,6 @@
         left:2%;
         width: 200px;
         height: 200px;
-        //border: 2px solid red;
         display: grid;
         align-items: center;
         &_double{
@@ -35,9 +34,17 @@
             top: 34%;
         }
     }
-    &_navbar{
+    &_motto{
         height: 132px;
-        border-bottom: 1px solid whitesmoke;
+        position: relative;
+        img{
+            position: absolute;
+            top:20px;
+            right: 20px;
+            width: 60%;
+            object-fit: cover;
+            z-index: 99 !important;
+        }
     }
 }
 

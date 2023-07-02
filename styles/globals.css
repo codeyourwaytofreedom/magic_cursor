@@ -9,8 +9,8 @@
   );
   --focus_color: #FFFFE0;
   --transition_color: #C0C0C0;
-  --focus_color: rgb(208, 237, 248);
-  --transition_color: skyblue;
+  --focus_color: gold;
+  --transition_color: rgb(29, 27, 27);
 }
 
 

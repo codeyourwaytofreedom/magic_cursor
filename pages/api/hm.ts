@@ -22,7 +22,7 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   
-  async function fetch_price(url) {
+  async function fetch_price(url:string) {
     try {
       const browser = await puppeteer.launch({
         headless: "new",
@@ -45,9 +45,17 @@ export default async function handler(
     } catch (error) {
       console.error("An error occurred:", error);
     }
-  }
+}
 
-urls.drinks.products.forEach((pro) => pro.product_urls.map((p_url) => fetch_price(p_url.link)))
+async function fetchAllPrices() {
+  for (const pro of urls.drinks.products) {
+    for (const p_url of pro.product_urls) {
+      await fetch_price(p_url.link);
+    }
+  }
+}
+
+fetchAllPrices();
 
 res.status(200).json({ name: 'John Doe' });
 

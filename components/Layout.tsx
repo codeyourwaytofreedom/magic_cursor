@@ -58,8 +58,10 @@ const Layout = ({ children }: HomieProps) => {
 
     return ( <>
         <div className={h.homie} id={h[`${shade}`]}>
+            <div className={h.homie_motto}>
+               <Image src={"/hmuch.png"} alt={"howmuch"} width={1000} height={100}/>
+            </div>
             <Scales/>
-            <div className={h.homie_navbar}></div>
             {children}
         </div>
                 

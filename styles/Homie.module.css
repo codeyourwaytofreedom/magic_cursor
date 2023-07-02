@@ -36,9 +36,18 @@
   left: 37.5%;
   top: 34%;
 }
-.homie_navbar {
+.homie_motto {
   height: 132px;
-  border-bottom: 1px solid whitesmoke;
+  position: relative;
+}
+.homie_motto img {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 60%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 99 !important;
 }
 
 #centercenter {
