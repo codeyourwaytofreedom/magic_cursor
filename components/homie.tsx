@@ -5,13 +5,13 @@ import h from "../styles/Homie.module.css";
 
 const Homie = () => {
     const [shade, setShade] = useState<string>("centercenter");
-    const [slope,setSlope] = useState<number>(0);
+    const [slope,setSlope] = useState<number>(-20);
 
     useEffect(() => {
         const moving = (event:MouseEvent) => {
         const {innerWidth, innerHeight} = window;
-        const height_percentage = event.clientX < innerWidth/2 ? event.clientX/innerWidth/2 * -80 
-                                  : -(20 + 2*(20 - event.clientX/innerWidth/2 * 80));
+        const height_percentage = event.clientX < innerWidth/2 ? -20- event.clientX/innerWidth/2 * -80 
+                                  : 20 - (20 + (20 - event.clientX/innerWidth/2 * 80));
          setTimeout(() => {
             setSlope(height_percentage);
          }, 350);
