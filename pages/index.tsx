@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Homie from '../components/homie'
+import Layout from '../components/Layout'
 
 export default function Home() {
   return (
@@ -11,7 +11,9 @@ export default function Home() {
         <link rel="icon" href="/magic.png" />
       </Head>
       <main>
-            <Homie/>
+            <Layout>
+              
+            </Layout>
       </main>
     </>
   )
