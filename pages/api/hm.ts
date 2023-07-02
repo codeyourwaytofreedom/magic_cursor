@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import puppeteer from "puppeteer-extra";
 import { executablePath } from 'puppeteer';
 import StealthPlugin from "puppeteer-extra-plugin-stealth";
-
+import {urls_austria} from "../../components/product_bank";
 
 type Data = {
   name: string
@@ -24,15 +24,17 @@ export default async function handler(
         executablePath: executablePath()
       });
       const page = await browser.newPage();
-  
-      await page.goto("https://www.interspar.at/shop/lebensmittel/pepsi-cola-cola/p/2020004406385");
+      await page.goto(urls_austria[1]);
       await page.waitForSelector('label.productDetailsPrice');
+      await page.waitForSelector('h1.productDetailsName');
   
-      const value = await page.evaluate(() => {
-        const label = document.querySelector('label.productDetailsPrice');
-        return label?.textContent;
+      const product = await page.evaluate(() => {
+        const product_name = document.querySelector('h1.productDetailsName')?.getAttribute("title");
+        const product_price = document.querySelector('label.productDetailsPrice')?.textContent;
+        return {product_name,product_price};
       });
-      console.log(value);
+
+      console.log(product);
   
       await browser.close();
     } catch (error) {
