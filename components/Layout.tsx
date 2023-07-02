@@ -16,43 +16,34 @@ const Layout = ({ children }: HomieProps) => {
         const moving = (event:MouseEvent) => {
           if(event.clientX < innerWidth/3){
              if(event.clientY < innerHeight/3){
-                console.log("left top");
                 setShade("lefttop");
              }
              else if(event.clientY > innerHeight*2/3){
-                console.log("left bottom");
                 setShade("leftbottom");
              }
              else{
-                console.log("left");
                 setShade("leftleft");
              }
           }
           else if(event.clientX > innerWidth*2/3){
             if(event.clientY < innerHeight/3){
-                console.log("right top");
                 setShade("righttop");
              }
              else if(event.clientY > innerHeight*2/3){
-                console.log("right bottom");
                 setShade("rightbottom");
              }
              else{
-                console.log("right");
                 setShade("rightright");
              }
          }
          else{
             if(event.clientY < innerHeight/3){
-                console.log("center top");
                 setShade("centertop");
              }
              else if(event.clientY > innerHeight*2/3){
-                console.log("center bottom");
                 setShade("centerbottom");
              }
              else{
-                console.log("center center");
                 setShade("centercenter");
              }
          }
