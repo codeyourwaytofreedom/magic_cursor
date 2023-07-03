@@ -1,11 +1,8 @@
 import h from "../styles/Slider.module.css";
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
-/* import right from "../public/right.png";
- */
+import { countries } from "./product_bank";
+
 const Slider_menu = () => {
-  const weight_classes = ["Featherweight","Lightweight","Welterweight","Middleweight","Light heavyweight","Featherweight","Lightweight","Welterweight","Middleweight","Light heavyweight","Cruiserweight","Heavyweight","Champions", "Knock-outs","Legends","Title fights"]
-  
   const forward = useRef<HTMLDivElement>(null);
   const anchor = useRef<HTMLDivElement>(null);
   const [traX, setX] = useState<number>(0);
@@ -62,18 +59,18 @@ const Slider_menu = () => {
   }, []);
   
   const handle_forward = () =>{
-      setX(traX-50);
+      setX(traX-200);
       setTimeout(() => {
-        setDistance(distance+50)
+        setDistance(distance+200)
       }, 100);
   }
 
   const handle_backward = () =>{
-    if(traX + 50 > 0){
+    if(traX + 200 > 0){
       setX(0)
     }
     else{
-      setX(traX+50)
+      setX(traX+200)
     }
   }
 
@@ -89,12 +86,10 @@ const Slider_menu = () => {
   },[anchor.current?.getBoundingClientRect().left, forward.current?.getBoundingClientRect().left]);
 
   useEffect(()=>{
-    console.log("vis changed");
     if(anchor.current && forward.current){
       const margin = forward.current.getBoundingClientRect().left -  anchor.current!.getBoundingClientRect().left;
-        console.log(margin);
         if(margin > 0){
-          setX(traX + (margin+20))
+          setX(traX + (margin+10))
         }
     }
   },[forVis])
@@ -102,26 +97,23 @@ const Slider_menu = () => {
   return ( 
   <div className={h.slider}>
         <button id={h.back} onClick={handle_backward} style={{visibility: traX < 0 ? "visible" : "hidden"}}> 
-          {/* <Image src={right} alt={"right"}/> */}
-          -
+        &#x276E;
         </button>
       <div className={h.slider_topBanner}>
-      <div id={h.backshadow} style={{visibility: traX < 0 ? "visible" : "hidden"}}></div>
         <div className={h.slider_topBanner_menu} style={{ transform: `translateX(${traX}px)` }}>
             {
-              weight_classes.map((c,i )=>
-            <button className={h.slider_topBanner_menu_double} key={i}>
-             {c}
-            </button>
+              countries.map((c,i )=>
+            <div className={h.slider_topBanner_menu_double} key={i}>
+                <div className={h.slider_topBanner_menu_double_country}>{c.name}</div>
+                <div className={h.slider_topBanner_menu_double_info}>Minimum wage: € {c.min_wage}</div>
+            </div>
             )
             }
             <div ref={anchor}></div>
         </div>
         <div id={h.name} ref={forward} style={{visibility:forVis ? "visible" : "hidden"}}>
           <button onClick={handle_forward} id={h.forward}>
-            <div id={h.shadow}></div>
-            {/* <Image src={right} alt={"right"}/> */}
-            +
+            &#10095;
           </button>
         </div>
       </div>

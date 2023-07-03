@@ -23,3 +23,46 @@ export const urls ={
         ]
     }
 }
+
+export const countries = [
+    {
+        name:"BULGARIA",
+        min_wage:440
+    },
+    {
+        name:"SERBIA",
+        min_wage:343
+    },
+    {
+        name:"TURKEY",
+        min_wage:440
+    },
+    {
+        name:"ROMANIA",
+        min_wage:466
+    },
+    {
+        name:"FRANCE",
+        min_wage:1539
+    },
+    {
+        name:"GERMANY",
+        min_wage:1584
+    },
+    {
+        name:"AUSTRIA",
+        min_wage:1500
+    },
+    {
+        name:"SPAIN",
+        min_wage:1050
+    },
+    {
+        name:"HUNGARY",
+        min_wage:487
+    },
+    {
+        name:"BELGUIM",
+        min_wage:1593
+    }
+  ]

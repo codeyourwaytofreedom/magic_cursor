@@ -49,50 +49,6 @@
      object-fit: cover;
   z-index: 99 !important;
 }
-.homie_intro {
-  position: relative;
-  top: 30px;
-  padding: 40px 80px;
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
-  display: flex;
-  align-items: center;
-}
-.homie_intro_shell {
-  display: flex;
-  align-items: center;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
-  border: 2px solid red;
-  overflow: hidden;
-  position: relative;
-}
-.homie_intro_shell_each {
-  border: 2px solid white;
-  height: 450px;
-  width: 20vw;
-  min-width: 350px;
-}
-.homie_intro #back, .homie_intro #forth {
-  position: absolute;
-  left: 30px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  color: silver;
-  font-size: 35px;
-  cursor: pointer;
-}
-.homie_intro #back:hover, .homie_intro #forth:hover {
-  background-color: black;
-}
-.homie_intro #forth {
-  left: unset;
-  right: 30px;
-}
 
 #centercenter {
   background: radial-gradient(circle at center, var(--focus_color), var(--transition_color));
