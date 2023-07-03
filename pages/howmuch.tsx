@@ -5,7 +5,6 @@ const Howmuch = () => {
     return ( 
         <>
             <Layout>
-                <Price_fetcher/>
             </Layout>
         </>
      );
