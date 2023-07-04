@@ -48,35 +48,54 @@
     }
     &_menu{
         border: 2px solid skyblue;
-        padding-right: 3vw;
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
         &_clicks{
             padding-top: 20px;
             padding-bottom: 20px;
             display: flex;
             column-gap: 10px;
+            width: calc(100vw - 130px);
+            background-color: white;
+            overflow: hidden;
             button{
                 background: transparent;
                 border: none;
                 position: relative;
                 display: grid;
                 align-items: center;
+                img{
+                    object-fit: contain;
+                }
                 #text{
-                    display: block;
+                    display: none;
                     position: absolute;
-                    border: 2px solid white;
+                    border: 2px solid black;
+                    background-color: silver;
+                    font-size: large;
+                    padding: 2px 0;
                     width: 100%;
+                    overflow: hidden;
                 }
                 &:hover #text,
                 &:focus #text {
-                    display: block;
+                    display: grid;
+                    justify-self: center;
+                    animation: enlarge 0.5s 1;
                 }
             }
         }
     }
 }
 
+@keyframes enlarge {
+    from{
+        width: 0%;
+    }
+    to{
+        width: 100%;
+    }   
+}
 
 
 
