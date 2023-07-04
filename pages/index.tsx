@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Layout from '../components/Layout'
+import Menu from '../components/menu'
 import Slider_menu from '../components/slider'
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       </Head>
       <main>
             <Layout>
+              <Menu />
               <Slider_menu />
             </Layout>
       </main>

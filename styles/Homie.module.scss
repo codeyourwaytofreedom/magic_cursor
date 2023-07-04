@@ -46,6 +46,35 @@
             z-index: 99 !important;
         }
     }
+    &_menu{
+        border: 2px solid skyblue;
+        padding-right: 3vw;
+        display: flex;
+        justify-content: flex-end;
+        &_clicks{
+            padding-top: 20px;
+            padding-bottom: 20px;
+            display: flex;
+            column-gap: 10px;
+            button{
+                background: transparent;
+                border: none;
+                position: relative;
+                display: grid;
+                align-items: center;
+                #text{
+                    display: block;
+                    position: absolute;
+                    border: 2px solid white;
+                    width: 100%;
+                }
+                &:hover #text,
+                &:focus #text {
+                    display: block;
+                }
+            }
+        }
+    }
 }
 
 

@@ -58,19 +58,20 @@ const Slider_menu = () => {
     };
   }, []);
   
+  const step_size = 100;
   const handle_forward = () =>{
-      setX(traX-200);
+      setX(traX-step_size);
       setTimeout(() => {
-        setDistance(distance+200)
+        setDistance(distance+step_size)
       }, 100);
   }
 
   const handle_backward = () =>{
-    if(traX + 200 > 0){
+    if(traX + step_size > 0){
       setX(0)
     }
     else{
-      setX(traX+200)
+      setX(traX+step_size)
     }
   }
 
