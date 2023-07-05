@@ -1,11 +1,9 @@
 
 .slider{
     position: relative;
-    top:30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    //background-color: rgba(0, 0, 0, 0.1);
     #back{
         position: absolute;
         left: 20px;
@@ -39,7 +37,6 @@
         overflow: hidden;
         z-index: 1 !important;
         width: calc(100vw - 130px);
-        padding: 20px 10px;
         &_menu{
             display: flex;
             position: relative;
@@ -51,7 +48,7 @@
                     position: relative;
                     display: grid;
                     align-items: center;
-                    padding: 15px 10px;
+                    padding: 0px 10px;
                     img{
                         object-fit: contain;
                     }
@@ -70,9 +67,6 @@
                         display: grid;
                         justify-self: center;
                         animation: enlarge 0.5s 1;
-                    }
-                    &:hover{
-                        
                     }
                 }
             }

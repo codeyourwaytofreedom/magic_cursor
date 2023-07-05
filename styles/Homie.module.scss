@@ -35,13 +35,13 @@
         }
     }
     &_motto{
-        height: 132px;
         position: relative;
+        display: flex;
+        justify-content: flex-end;
+        padding: 20px 55px;
         img{
-            position: absolute;
-            top:20px;
-            right: 55px;
-            width: 60%;
+            width: 90%;
+            max-width: 700px;
             object-fit: cover;
             z-index: 99 !important;
         }
@@ -49,6 +49,32 @@
 }
 
 
+@media (max-width: 991.98px) { 
+    .homie{
+        &_scales{
+            display: none;
+        }
+        &_motto{
+            padding: 10px 0;
+            justify-content: center;
+        }
+    }
+ }
+
+@media (max-width: 767.98px) { 
+
+ }
+
+ @media (max-width: 575.98px) { 
+    .homie{
+        &_motto{
+            img{
+                object-fit: contain;
+                width: 95%;
+            }
+        }
+    }
+ }
 
 
 

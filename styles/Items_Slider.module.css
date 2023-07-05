@@ -1,6 +1,5 @@
 .slider {
   position: relative;
-  top: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,7 +38,6 @@
   overflow: hidden;
   z-index: 1 !important;
   width: calc(100vw - 130px);
-  padding: 20px 10px;
 }
 .slider_topBanner_menu {
   display: flex;
@@ -52,7 +50,7 @@
   position: relative;
   display: grid;
   align-items: center;
-  padding: 15px 10px;
+  padding: 0px 10px;
 }
 .slider_topBanner_menu_double button img {
   -o-object-fit: contain;

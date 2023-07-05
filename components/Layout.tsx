@@ -1,8 +1,6 @@
 import Image from "next/image";
 import React, { ReactNode, useEffect, useState } from "react";
 import h from "../styles/Homie.module.css";
-import Price_fetcher from "./price_fetcher";
-import Scales from "./scales";
 
 interface HomieProps {
    children: ReactNode;
@@ -61,7 +59,6 @@ const Layout = ({ children }: HomieProps) => {
             <div className={h.homie_motto}>
                <Image src={"/hmuch.png"} alt={"howmuch"} width={1000} height={100}/>
             </div>
-            <Scales/>
             {children}
         </div>
                 
