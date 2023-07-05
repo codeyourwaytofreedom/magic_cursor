@@ -16,7 +16,7 @@ export default function Home() {
       <main>
             <Layout>
               <Items_slider />
-              {/* <Slider_menu /> */}
+              <Slider_menu />
             </Layout>
       </main>
     </>

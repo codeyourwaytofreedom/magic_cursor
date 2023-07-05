@@ -49,66 +49,7 @@
      object-fit: cover;
   z-index: 99 !important;
 }
-.homie_menu {
-  border: 2px solid skyblue;
-  display: flex;
-  justify-content: center;
-}
-.homie_menu_clicks {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  display: flex;
-  -moz-column-gap: 10px;
-       column-gap: 10px;
-  width: calc(100vw - 130px);
-  background-color: white;
-  overflow: hidden;
-}
-.homie_menu_clicks button {
-  background: transparent;
-  border: none;
-  position: relative;
-  display: grid;
-  align-items: center;
-}
-.homie_menu_clicks button img {
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-.homie_menu_clicks button #text {
-  display: none;
-  position: absolute;
-  border: 2px solid black;
-  background-color: silver;
-  font-size: large;
-  padding: 2px 0;
-  width: 100%;
-  overflow: hidden;
-}
-.homie_menu_clicks button:hover #text, .homie_menu_clicks button:focus #text {
-  display: grid;
-  justify-self: center;
-  -webkit-animation: enlarge 0.5s 1;
-          animation: enlarge 0.5s 1;
-}
 
-@-webkit-keyframes enlarge {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes enlarge {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 100%;
-  }
-}
 #centercenter {
   background: radial-gradient(circle at center, var(--focus_color), var(--transition_color));
 }

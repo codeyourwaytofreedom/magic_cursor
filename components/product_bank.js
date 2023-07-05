@@ -69,6 +69,6 @@ export const countries = [
 
 
 export const items = [
-    { name:"flat" }, { name:"milk" }, { name:"oil" }, { name:"flat" }, { name:"milk" }, { name:"oil" },{ name:"flat" }, { name:"milk" }, { name:"oil" },
-    { name:"flat" }, { name:"milk" }, { name:"oil" },{ name:"flat" }, { name:"milk" }, { name:"oil" },{ name:"flat" }, { name:"milk" }, { name:"oil" },
+    { name:"flat" }, { name:"milk" }, { name:"oil" }, { name:"transportation" }, { name:"burger" },{ name:"cola" }, { name:"Iphone" }, { name:"car" },
+    { name:"orange" }, { name:"water" }, { name:"hotel" },{ name:"shoes" }, { name:"cigararette" }, { name:"meat" },{ name:"fridge" }, { name:"toilet roll" }, { name:"tv" },
 ]
