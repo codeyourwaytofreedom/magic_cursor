@@ -39,7 +39,7 @@
 .homie_motto {
   position: relative;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   padding: 20px 55px;
 }
 .homie_motto img {
@@ -64,6 +64,11 @@
     -o-object-fit: contain;
        object-fit: contain;
     width: 95%;
+  }
+}
+@media (max-width: 499.98px) {
+  .homie_motto {
+    height: 90px;
   }
 }
 #centercenter {

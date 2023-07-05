@@ -8,7 +8,6 @@
   position: absolute;
   left: 20px;
   z-index: 90 !important;
-  height: 80px;
   display: grid;
   align-items: center;
   justify-content: center;
@@ -50,11 +49,13 @@
   position: relative;
   display: grid;
   align-items: center;
-  padding: 0px 10px;
+  padding-right: 20px;
 }
 .slider_topBanner_menu_double button img {
   -o-object-fit: contain;
      object-fit: contain;
+  width: 70px;
+  height: 50px;
 }
 .slider_topBanner_menu_double button #text {
   display: none;
@@ -118,5 +119,21 @@
   }
   to {
     width: 100%;
+  }
+}
+@media (max-width: 499px) {
+  .slider {
+    top: 0;
+  }
+  .slider #back {
+    display: none;
+  }
+  .slider_topBanner {
+    overflow: scroll;
+    padding: 10px;
+    width: 100%;
+  }
+  .slider_topBanner #name {
+    display: none;
   }
 }/*# sourceMappingURL=Items_Slider.module.css.map */

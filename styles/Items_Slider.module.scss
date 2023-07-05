@@ -8,7 +8,6 @@
         position: absolute;
         left: 20px;
         z-index: 90 !important;
-        height: 80px;
         display: grid;
         align-items: center;
         justify-content: center;
@@ -48,9 +47,11 @@
                     position: relative;
                     display: grid;
                     align-items: center;
-                    padding: 0px 10px;
+                    padding-right: 20px;
                     img{
                         object-fit: contain;
+                        width: 70px;
+                        height: 50px;
                     }
                     #text{
                         display: none;
@@ -111,3 +112,23 @@
         width: 100%;
     }   
 }
+
+
+
+
+@media (max-width: 499px) { 
+    .slider{
+        top:0;
+        #back{
+            display: none;
+        }
+        &_topBanner{
+            overflow: scroll;
+            padding: 10px;
+            width: 100%;
+            #name{
+                display: none;
+            }
+        }
+    }
+ }

@@ -110,4 +110,32 @@
   height: 15px;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+@media (max-width: 499px) {
+  .slider {
+    top: 20px;
+  }
+  .slider #back {
+    display: none;
+  }
+  .slider_topBanner {
+    overflow: scroll;
+    padding: 10px;
+    width: 100%;
+  }
+  .slider_topBanner_menu_double {
+    width: calc(95vw - 30px);
+    height: 350px;
+  }
+  .slider_topBanner_menu_double_country {
+    font-size: 40px;
+  }
+  .slider_topBanner_menu_double_info {
+    height: 50px;
+    bottom: 10px;
+  }
+  .slider_topBanner #name {
+    display: none;
+  }
 }/*# sourceMappingURL=Slider.module.css.map */
