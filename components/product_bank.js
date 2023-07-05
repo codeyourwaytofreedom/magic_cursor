@@ -3,35 +3,15 @@ export const urls_austria = [
     "https://www.interspar.at/shop/lebensmittel/pepsi-cola-cola/p/2020004406385"
 ]
 
-export const urls ={
-    drinks:{
-        categoryName:"Drinks",
-        products:[
-            {
-                product_name:"Pepsi - Cola 330 ml",
-                product_urls:[
-                    {
-                        country:"Austria",
-                        link:"https://www.interspar.at/shop/lebensmittel/pepsi-cola-cola/p/2020004406385"
-                    },
-                    {
-                        country:"Austria",
-                        link:"https://www.interspar.at/shop/lebensmittel/spar-cola/p/7114274"
-                    }
-                ]
-            }
-        ]
-    }
-}
-
 export const countries = [
     {
         name:"BULGARIA",
-        min_wage:440
+        min_wage:440,
     },
     {
         name:"SERBIA",
-        min_wage:343
+        min_wage:343,
+        oil:(1.56+1.55+1.50+1.55)/4
     },
     {
         name:"TURKEY",

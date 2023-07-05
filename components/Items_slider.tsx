@@ -2,8 +2,14 @@ import h from "../styles/Items_Slider.module.css";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { items } from "./product_bank";
+import { Dispatch, SetStateAction } from 'react';
+import { NextPage } from "next";
 
-const Items_slider = () => {
+interface ItemsSliderProps {
+  setChosen: Dispatch<SetStateAction<string>>;
+}
+
+const Items_slider : NextPage<ItemsSliderProps> = ({ setChosen }) =>  {
   const forward = useRef<HTMLDivElement>(null);
   const anchor = useRef<HTMLDivElement>(null);
   const [traX, setX] = useState<number>(0);
@@ -106,7 +112,7 @@ const Items_slider = () => {
             {
               items.map((item,index )=>
             <div className={h.slider_topBanner_menu_double} key={index}>
-                      <button>
+                      <button onClick={()=> setChosen(item.name)}>
                         <Image src={`/${item.name}.png`} alt={"oil"} width={70} height={90}/>
                         <div id={h.text}>{item.name}</div>
                     </button>

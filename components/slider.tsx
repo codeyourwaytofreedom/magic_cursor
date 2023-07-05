@@ -1,8 +1,13 @@
 import h from "../styles/Slider.module.css";
 import { useEffect, useRef, useState } from "react";
 import { countries } from "./product_bank";
+import { NextPage } from 'next';
 
-const Slider_menu = () => {
+interface SliderProps {
+  chosen: string;
+}
+
+const Slider_menu: NextPage<SliderProps> = ({ chosen }) => {
   const forward = useRef<HTMLDivElement>(null);
   const anchor = useRef<HTMLDivElement>(null);
   const [traX, setX] = useState<number>(0);
@@ -103,10 +108,11 @@ const Slider_menu = () => {
       <div className={h.slider_topBanner}>
         <div className={h.slider_topBanner_menu} style={{ transform: `translateX(${traX}px)` }}>
             {
-              countries.map((c,i )=>
+              countries.sort((a, b) => a.min_wage - b.min_wage).map((c,i )=>
             <div className={h.slider_topBanner_menu_double} key={i}>
                 <div className={h.slider_topBanner_menu_double_country}>{c.name}</div>
-                <div className={h.slider_topBanner_menu_double_info}>Minimum wage: € {c.min_wage}</div>
+                <div className={h.slider_topBanner_menu_double_info}>Minimum wage: € {c.min_wage} <br /> {c.oil && c.oil}
+                </div>
             </div>
             )
             }
