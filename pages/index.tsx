@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Items_slider from '../components/Items_slider'
 import Layout from '../components/Layout'
 import Menu from '../components/menu'
 import Slider_menu from '../components/slider'
@@ -14,8 +15,8 @@ export default function Home() {
       </Head>
       <main>
             <Layout>
-              <Menu />
-              <Slider_menu />
+              <Items_slider />
+              {/* <Slider_menu /> */}
             </Layout>
       </main>
     </>

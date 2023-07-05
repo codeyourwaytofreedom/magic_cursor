@@ -1,0 +1,108 @@
+.slider {
+  position: relative;
+  top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 5px;
+}
+.slider #back {
+  position: absolute;
+  left: 20px;
+  z-index: 90 !important;
+  height: 80px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  font-size: 25px;
+}
+.slider #back:hover {
+  background-color: black;
+  color: white;
+}
+.slider #back img {
+  width: 15px;
+  height: 15px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.slider_topBanner {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1 !important;
+  width: calc(100vw - 130px);
+  padding: 20px 10px;
+}
+.slider_topBanner_menu {
+  display: flex;
+  position: relative;
+  white-space: nowrap !important;
+}
+.slider_topBanner_menu_double button {
+  background: transparent;
+  border: none;
+  position: relative;
+  display: grid;
+  align-items: center;
+  padding: 15px 10px;
+}
+.slider_topBanner_menu_double button img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.slider_topBanner_menu_double button #text {
+  display: none;
+  position: absolute;
+  border: 2px solid black;
+  background-color: silver;
+  font-size: large;
+  padding: 2px 0;
+  width: 90%;
+  overflow: hidden;
+}
+.slider_topBanner_menu_double button:hover #text, .slider_topBanner_menu_double button:focus #text {
+  display: grid;
+  justify-self: center;
+  -webkit-animation: enlarge 0.5s 1;
+          animation: enlarge 0.5s 1;
+}
+.slider_topBanner #name {
+  position: absolute;
+  right: 20px;
+}
+.slider_topBanner #name #forward {
+  position: relative;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: silver;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  font-size: 25px;
+}
+.slider_topBanner #name #forward:hover {
+  background-color: black;
+  color: white;
+}
+.slider_topBanner #name #forward img {
+  width: 15px;
+  height: 15px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}/*# sourceMappingURL=Items_Slider.module.css.map */

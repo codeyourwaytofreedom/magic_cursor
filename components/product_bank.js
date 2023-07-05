@@ -66,3 +66,9 @@ export const countries = [
         min_wage:1593
     }
   ]
+
+
+export const items = [
+    { name:"flat" }, { name:"milk" }, { name:"oil" }, { name:"flat" }, { name:"milk" }, { name:"oil" },{ name:"flat" }, { name:"milk" }, { name:"oil" },
+    { name:"flat" }, { name:"milk" }, { name:"oil" },{ name:"flat" }, { name:"milk" }, { name:"oil" },{ name:"flat" }, { name:"milk" }, { name:"oil" },
+]
