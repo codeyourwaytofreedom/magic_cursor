@@ -102,7 +102,9 @@ const Slider_menu: NextPage<SliderProps> = ({ chosen }) => {
 
   const dynamic_unit:any = {
     oil:"litres of",
-    Iphone:""
+    Iphone:"",
+    meat:"kilos of",
+    orange:"kilos of"
   }
 
   return ( 
@@ -119,9 +121,14 @@ const Slider_menu: NextPage<SliderProps> = ({ chosen }) => {
                 <div className={h.slider_topBanner_menu_double_info}>
                   Minimum wage: € {c.min_wage}
                   {
-                    c[chosen] &&
+                    c[chosen] && 
+                    chosen === "Iphone" ?
                     <div className={h.slider_topBanner_menu_double_info_result}>
-                      buys {Math.floor(c.min_wage / c[chosen])} {c.min_wage / c[chosen] > 0 ? dynamic_unit[chosen] : dynamic_unit[chosen] } {chosen}
+                       {(c[chosen]/c.min_wage).toString().substring(0,4)} minimum wage needed to buy {chosen} 14
+                    </div>  
+                :
+                  <div className={h.slider_topBanner_menu_double_info_result}>
+                      buys {Math.floor(c.min_wage / c[chosen])}  {dynamic_unit[chosen]} {chosen}
                   </div>
                   }
                 </div>

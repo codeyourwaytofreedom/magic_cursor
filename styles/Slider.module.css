@@ -87,6 +87,8 @@
   padding: 5px 10px;
   width: 100%;
   font-size: large;
+  white-space: wrap;
+  text-align: center;
 }
 .slider_topBanner #name {
   position: absolute;

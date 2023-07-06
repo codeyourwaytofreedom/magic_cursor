@@ -103,6 +103,8 @@ const Items_slider : NextPage<ItemsSliderProps> = ({ setChosen, chosen }) =>  {
     }
   },[forVis])
 
+  const [on_it, setOn_it] = useState<string>("");
+
   return ( 
   <div className={h.slider}>
         <button id={h.back} onClick={handle_backward} style={{visibility: traX < 0 ? "visible" : "hidden"}}> 
@@ -113,9 +115,9 @@ const Items_slider : NextPage<ItemsSliderProps> = ({ setChosen, chosen }) =>  {
             {
               items.map((item,index )=>
             <div className={h.slider_topBanner_menu_double} key={index}>
-                    <button onClick={()=> setChosen(item.name)}>
+                    <button onClick={()=> setChosen(item.name)} onMouseEnter={()=> setOn_it(item.name)} onMouseLeave={()=> setOn_it("")}>
                         <Image src={`/${item.name}.png`} alt={"oil"} width={70} height={90}/>
-                        <div id={h.text}>{item.name}</div>
+                        <div id={chosen === item.name ? h.text : on_it === item.name ? h.text : h.hide }>{item.name}</div>
                     </button>
             </div>
             )

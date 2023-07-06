@@ -8,66 +8,86 @@ export const countries = [
         name:"BULGARIA",
         min_wage:440,
         oil:(1.24+1.29+1.23+1.26)/4,
-        Iphone:955
+        Iphone:955,
+        meat:12.2,
+        orange:2
     },
     {
         name:"SERBIA",
         min_wage:343,
         oil:(1.56+1.55+1.50+1.55)/4,
-        Iphone:1178
+        Iphone:1178,
+        meat:11.3,
+        orange:1.7
     },
     {
         name:"TURKEY",
         min_wage:440,
         oil:(0.84+0.87)/2,
-        Iphone:1500
+        Iphone:1500,
+        meat:14.9,
+        orange:0.7
     },
     {
         name:"ROMANIA",
         min_wage:466,
         oil:(1.35+1.35+1.34+1.35)/4,
-        Iphone:888
+        Iphone:888,
+        meat:9.8,
+        orange:1.2
     },
     {
         name:"FRANCE",
         min_wage:1539,
         oil:(1.67+1.75+1.68)/3,
-        Iphone:1019
+        Iphone:1019,
+        meat:16.9,
+        orange:0.9
     },
     {
         name:"GERMANY",
         min_wage:1584,
         oil:(1.60+1.61+1.61+1.62)/4,
-        Iphone:999
+        Iphone:999,
+        meat:24.9,
+        orange:3.2
     },
     {
         name:"AUSTRIA",
         min_wage:1500,
         oil:(1.54+1.56+1.58+1.53)/4,
-        Iphone:999
+        Iphone:999,
+        meat:12.9,
+        orange:2.4
     },
     {
         name:"SPAIN",
         min_wage:1050,
         oil:(1.42+1.44+1.49)/3,
-        Iphone:1009
+        Iphone:1009,
+        meat:12.9,
+        orange:3.1
     },
     {
         name:"HUNGARY",
         min_wage:487,
         oil:(1.49+1.41+1.54)/3,
-        Iphone:1179
+        Iphone:1179,
+        meat:13.1,
+        orange:1.8
     },
     {
         name:"BELGUIM",
         min_wage:1593,
         oil:(1.68+1.78+1.67+1.73)/4,
-        Iphone:1019
+        Iphone:1019,
+        meat:13,
+        orange:1.8
     }
   ]
 
 
 export const items = [
-    { name:"flat" }, { name:"milk" }, { name:"oil" }, { name:"transportation" }, { name:"burger" },{ name:"cola" }, { name:"Iphone" }, { name:"car" },
-    { name:"orange" }, { name:"water" }, { name:"hotel" },{ name:"shoes" }, { name:"cigararette" }, { name:"meat" },{ name:"fridge" }, { name:"toilet roll" }, { name:"tv" },
+    { name:"oil" },{ name:"meat" },{ name:"Iphone" },{ name:"orange" },{ name:"flat" }, { name:"milk" }, { name:"ticket" }, { name:"burger" },{ name:"cola" }, { name:"car" },
+    { name:"water" }, { name:"hotel" },{ name:"shoes" }, { name:"cigararette" },{ name:"fridge" }, { name:"toilet roll" }, { name:"tv" },
 ]
