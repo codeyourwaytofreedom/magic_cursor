@@ -7,9 +7,10 @@ import { NextPage } from "next";
 
 interface ItemsSliderProps {
   setChosen: Dispatch<SetStateAction<string>>;
+  chosen:string
 }
 
-const Items_slider : NextPage<ItemsSliderProps> = ({ setChosen }) =>  {
+const Items_slider : NextPage<ItemsSliderProps> = ({ setChosen, chosen }) =>  {
   const forward = useRef<HTMLDivElement>(null);
   const anchor = useRef<HTMLDivElement>(null);
   const [traX, setX] = useState<number>(0);
@@ -112,7 +113,7 @@ const Items_slider : NextPage<ItemsSliderProps> = ({ setChosen }) =>  {
             {
               items.map((item,index )=>
             <div className={h.slider_topBanner_menu_double} key={index}>
-                      <button onClick={()=> setChosen(item.name)}>
+                    <button onClick={()=> setChosen(item.name)}>
                         <Image src={`/${item.name}.png`} alt={"oil"} width={70} height={90}/>
                         <div id={h.text}>{item.name}</div>
                     </button>

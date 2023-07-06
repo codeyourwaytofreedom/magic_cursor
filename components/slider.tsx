@@ -111,7 +111,9 @@ const Slider_menu: NextPage<SliderProps> = ({ chosen }) => {
               countries.sort((a, b) => a.min_wage - b.min_wage).map((c,i )=>
             <div className={h.slider_topBanner_menu_double} key={i}>
                 <div className={h.slider_topBanner_menu_double_country}>{c.name}</div>
-                <div className={h.slider_topBanner_menu_double_info}>Minimum wage: € {c.min_wage} <br /> {c.oil && c.oil}
+                <div className={h.slider_topBanner_menu_double_info}>
+                  Minimum wage: € {c.min_wage}
+                  <div className={h.slider_topBanner_menu_double_info_result}>buys {Math.floor(c.min_wage / c.oil)} litres of diesel</div>
                 </div>
             </div>
             )

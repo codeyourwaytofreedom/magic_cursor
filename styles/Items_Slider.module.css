@@ -42,6 +42,8 @@
   display: flex;
   position: relative;
   white-space: nowrap !important;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
 }
 .slider_topBanner_menu_double button {
   background: transparent;
@@ -49,7 +51,6 @@
   position: relative;
   display: grid;
   align-items: center;
-  padding-right: 20px;
 }
 .slider_topBanner_menu_double button img {
   -o-object-fit: contain;
