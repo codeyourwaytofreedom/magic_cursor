@@ -100,6 +100,11 @@ const Slider_menu: NextPage<SliderProps> = ({ chosen }) => {
     }
   },[forVis])
 
+  const dynamic_unit:any = {
+    oil:"litres of",
+    Iphone:""
+  }
+
   return ( 
   <div className={h.slider}>
         <button id={h.back} onClick={handle_backward} style={{visibility: traX < 0 ? "visible" : "hidden"}}> 
@@ -108,12 +113,17 @@ const Slider_menu: NextPage<SliderProps> = ({ chosen }) => {
       <div className={h.slider_topBanner}>
         <div className={h.slider_topBanner_menu} style={{ transform: `translateX(${traX}px)` }}>
             {
-              countries.sort((a, b) => a.min_wage - b.min_wage).map((c,i )=>
+              countries.sort((a, b) => a.min_wage - b.min_wage).map((c:any,i )=>
             <div className={h.slider_topBanner_menu_double} key={i}>
                 <div className={h.slider_topBanner_menu_double_country}>{c.name}</div>
                 <div className={h.slider_topBanner_menu_double_info}>
                   Minimum wage: € {c.min_wage}
-                  <div className={h.slider_topBanner_menu_double_info_result}>buys {Math.floor(c.min_wage / c.oil)} litres of diesel</div>
+                  {
+                    c[chosen] &&
+                    <div className={h.slider_topBanner_menu_double_info_result}>
+                      buys {Math.floor(c.min_wage / c[chosen])} {c.min_wage / c[chosen] > 0 ? dynamic_unit[chosen] : dynamic_unit[chosen] } {chosen}
+                  </div>
+                  }
                 </div>
             </div>
             )

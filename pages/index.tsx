@@ -18,7 +18,6 @@ export default function Home() {
             <Layout>
               <Items_slider setChosen={setChosen} chosen={chosen}/>
               <Slider_menu chosen={chosen} />
-              <h1>{chosen && chosen}</h1>
             </Layout>
       </main>
     </>
