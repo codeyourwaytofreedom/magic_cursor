@@ -13,6 +13,8 @@ export default function Home() {
     y:number
   }
   const [wander_XYs, setWander_XYs] = useState<XY[]>([]);
+  const [click_XYs, setClick_XYs] = useState<XY[]>([]);
+
 
   useEffect(() => {
     const handle_MouseMove = (event:MouseEvent) => {
@@ -27,12 +29,24 @@ export default function Home() {
     };
   }, []);
 
+  useEffect(() => {
+    const handle_Click = (event:MouseEvent) => {
+      setClick_XYs(prev => [...prev, {x:event.clientX, y:event.clientY}])
+    };
+
+    window.addEventListener('click', handle_Click);
+
+    return () => {
+      window.removeEventListener('click', handle_Click);
+    };
+  }, []);
+
 
   useEffect(() => {
     const handleBeforeUnload = () => {
       fetch("/api/hm",{
         method:"POST",
-        body:JSON.stringify(wander_XYs)
+        body:JSON.stringify({wander:wander_XYs, clicks:click_XYs})
       })
     };
 
@@ -41,7 +55,7 @@ export default function Home() {
     return () => {
       window.removeEventListener('beforeunload', handleBeforeUnload);
     };
-  }, [wander_XYs]);
+  }, [wander_XYs, click_XYs]);
 
 
   return (
