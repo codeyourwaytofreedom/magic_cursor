@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Items_slider from '../components/Items_slider'
 import Layout from '../components/Layout'
 import Slider_menu from '../components/slider';
@@ -7,6 +7,43 @@ import { countries } from '../components/product_bank';
 
 export default function Home() {
   const [chosen, setChosen] = useState<string>("");
+
+  type XY = {
+    x:number,
+    y:number
+  }
+  const [wander_XYs, setWander_XYs] = useState<XY[]>([]);
+
+  useEffect(() => {
+    const handle_MouseMove = (event:MouseEvent) => {
+      console.log(event.clientX, event.clientY);
+      setWander_XYs(prev => [...prev, {x:event.clientX, y:event.clientY}])
+    };
+
+    window.addEventListener('mousemove', handle_MouseMove);
+
+    return () => {
+      window.removeEventListener('mousemove', handle_MouseMove);
+    };
+  }, []);
+
+
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      fetch("/api/hm",{
+        method:"POST",
+        body:JSON.stringify(wander_XYs)
+      })
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, [wander_XYs]);
+
+
   return (
     <>
       <Head>
@@ -18,6 +55,7 @@ export default function Home() {
             <Layout>
               <Items_slider setChosen={setChosen} chosen={chosen}/>
               <Slider_menu chosen={chosen} />
+              <h1>{wander_XYs.length}</h1>
             </Layout>
       </main>
     </>

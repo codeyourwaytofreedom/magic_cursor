@@ -4,7 +4,6 @@ import puppeteer from "puppeteer-extra";
 import { executablePath } from 'puppeteer';
 import StealthPlugin from "puppeteer-extra-plugin-stealth";
 import {urls_austria} from "../../components/product_bank";
-import {urls} from "../../components/product_bank";
 
 type Data = {
   name: string
@@ -22,7 +21,7 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   
-  async function fetch_price(url:string) {
+/*   async function fetch_price(url:string) {
     try {
       const browser = await puppeteer.launch({
         headless: "new",
@@ -55,8 +54,9 @@ async function fetchAllPrices() {
   }
 }
 
-fetchAllPrices();
+fetchAllPrices(); */
 
+console.log(req.body);
 res.status(200).json({ name: 'John Doe' });
 
 }
