@@ -16,22 +16,16 @@
         align-items: center;
         justify-content: center;
         border-radius: 50%;
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         border: none;
         cursor: pointer;
         background-color: white;
         color: black;
         border: 2px solid black;
-        font-size: 25px;
         &:hover{
             background-color: black;
             color: white;
-        }
-        img{
-            width: 15px;
-            height: 15px;
-            object-fit: contain;
         }
     }
     &_topBanner{
@@ -40,7 +34,7 @@
         overflow: hidden;
         z-index: 1 !important;
         padding-left: 10px;
-        width: calc(100vw - 130px);
+        width: calc(100vw - 110px);
         padding-top: 20px;
         padding-bottom: 20px;
         &_menu{
@@ -93,8 +87,8 @@
             #forward{
                 position: relative;
                 border-radius: 50%;
-                width: 40px;
-                height: 40px;
+                width: 30px;
+                height: 30px;
                 display: grid;
                 justify-content: center;
                 align-items: center;
@@ -104,15 +98,9 @@
                 background-color: white;
                 color: black;
                 border: 2px solid black;
-                font-size: 25px;
                 &:hover{
                     background-color: black;
                     color: white;
-                }
-                img{
-                    width: 15px;
-                    height: 15px;
-                    object-fit: contain;
                 }
             }
         }

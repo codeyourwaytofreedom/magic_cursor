@@ -114,7 +114,7 @@ const Items_slider : NextPage<ItemsSliderProps> = ({ setChosen, chosen }) =>  {
         <div className={h.slider_topBanner_menu} style={{ transform: `translateX(${traX}px)` }}>
             {
               items.map((item,index )=>
-            <div className={h.slider_topBanner_menu_double} key={index}>
+            <div className={h.slider_topBanner_menu_double} key={index} style={{borderBottom: chosen === item.name ? "6px solid black" : "none"}}>
                     <button onClick={()=> setChosen(item.name)} onMouseEnter={()=> setOn_it(item.name)} onMouseLeave={()=> setOn_it("")}>
                         <Image src={`/${item.name}.png`} alt={"oil"} width={70} height={90}/>
                         <div id={chosen === item.name ? h.text : on_it === item.name ? h.text : h.hide }>{item.name}</div>

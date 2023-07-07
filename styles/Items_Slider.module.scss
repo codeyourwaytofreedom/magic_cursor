@@ -12,22 +12,16 @@
         align-items: center;
         justify-content: center;
         border-radius: 50%;
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         border: none;
         cursor: pointer;
         background-color: white;
         color: black;
         border: 2px solid black;
-        font-size: 25px;
         &:hover{
             background-color: black;
             color: white;
-        }
-        img{
-            width: 15px;
-            height: 15px;
-            object-fit: contain;
         }
     }
     &_topBanner{
@@ -48,6 +42,7 @@
                     position: relative;
                     display: grid;
                     align-items: center;
+                    padding-bottom: 5px;
                     img{
                         object-fit: contain;
                         width: 70px;
@@ -78,8 +73,8 @@
             #forward{
                 position: relative;
                 border-radius: 50%;
-                width: 40px;
-                height: 40px;
+                width: 30px;
+                height: 30px;
                 display: grid;
                 justify-content: center;
                 align-items: center;
@@ -89,15 +84,9 @@
                 background-color: white;
                 color: black;
                 border: 2px solid black;
-                font-size: 25px;
                 &:hover{
                     background-color: black;
                     color: white;
-                }
-                img{
-                    width: 15px;
-                    height: 15px;
-                    object-fit: contain;
                 }
             }
         }
