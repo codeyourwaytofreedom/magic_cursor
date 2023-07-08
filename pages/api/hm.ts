@@ -22,10 +22,10 @@ export default async function handler(
   const coll = data_base.collection('Cursor_sets');
   coll.insertOne({
     time:new Date(),
-    ip:req.socket.remoteAddress
+    ip:req.headers['x-client-ip']
   });
 
-  console.log(req.socket.remoteAddress)
+  console.log(req.headers['x-client-ip'])
 
   res.status(200).send('OK');
 

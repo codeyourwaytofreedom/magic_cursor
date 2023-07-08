@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 import Items_slider from '../components/Items_slider'
 import Layout from '../components/Layout'
 import Slider_menu from '../components/slider';
-import { countries } from '../components/product_bank';
 
 export default function Home() {
   const [chosen, setChosen] = useState<string>("");
