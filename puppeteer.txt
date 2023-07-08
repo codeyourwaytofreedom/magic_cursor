@@ -1,0 +1,43 @@
+
+puppeteer.use(StealthPlugin());
+
+import puppeteer from "puppeteer-extra";
+import { executablePath } from 'puppeteer';
+import StealthPlugin from "puppeteer-extra-plugin-stealth";
+
+
+async function fetch_price(url:string) {
+    try {
+      const browser = await puppeteer.launch({
+        headless: "new",
+        executablePath: executablePath()
+      });
+      const page = await browser.newPage();
+      await page.goto(url);
+      await page.waitForSelector('label.productDetailsPrice');
+      await page.waitForSelector('h1.productDetailsName');
+  
+      const product = await page.evaluate(() => {
+        const product_name = document.querySelector('h1.productDetailsName')?.getAttribute("title");
+        const product_price = document.querySelector('label.productDetailsPrice')?.textContent;
+        return {product_name,product_price};
+      });
+
+      console.log(product);
+  
+      await browser.close();
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
+}
+
+async function fetchAllPrices() {
+  for (const pro of urls.drinks.products) {
+    for (const p_url of pro.product_urls) {
+      await fetch_price(p_url.link);
+    }
+  }
+}
+
+fetchAllPrices();
+

@@ -1,62 +1,29 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import puppeteer from "puppeteer-extra";
-import { executablePath } from 'puppeteer';
-import StealthPlugin from "puppeteer-extra-plugin-stealth";
-import {urls_austria} from "../../components/product_bank";
+import { MongoClient } from "mongodb";
+
 
 type Data = {
   name: string
 }
 
-type url_interface = {
-  url:string
+async function connectToDatabase() {
+  const client = MongoClient.connect(process.env.MD_URL, { useNewUrlParser: true, useUnifiedTopology: true });
+  return client;
 }
 
 
-puppeteer.use(StealthPlugin());
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
   
-/*   async function fetch_price(url:string) {
-    try {
-      const browser = await puppeteer.launch({
-        headless: "new",
-        executablePath: executablePath()
-      });
-      const page = await browser.newPage();
-      await page.goto(url);
-      await page.waitForSelector('label.productDetailsPrice');
-      await page.waitForSelector('h1.productDetailsName');
-  
-      const product = await page.evaluate(() => {
-        const product_name = document.querySelector('h1.productDetailsName')?.getAttribute("title");
-        const product_price = document.querySelector('label.productDetailsPrice')?.textContent;
-        return {product_name,product_price};
-      });
+  console.log(JSON.parse(req.body));
+  const client = await connectToDatabase();
+  console.log(client)
 
-      console.log(product);
-  
-      await browser.close();
-    } catch (error) {
-      console.error("An error occurred:", error);
-    }
-}
 
-async function fetchAllPrices() {
-  for (const pro of urls.drinks.products) {
-    for (const p_url of pro.product_urls) {
-      await fetch_price(p_url.link);
-    }
-  }
-}
-
-fetchAllPrices(); */
-
-console.log(JSON.parse(req.body));
-res.status(200).json({ name: 'John Doe' });
+  res.status(200).json({ name: 'John Doe' });
 
 }
