@@ -43,7 +43,7 @@ export default function Home() {
 
   useEffect(() => {
     const handleBeforeUnload = () => {
-      fetch("https://magic-cursor.vercel.app/api/hm",{
+      fetch("/api/hm",{
         method:"POST",
         body:JSON.stringify({wander:wander_XYs, clicks:click_XYs})
       })
