@@ -5,6 +5,16 @@ import Layout from '../components/Layout'
 import Slider_menu from '../components/slider';
 
 export default function Home() {
+
+  useEffect(()=>{
+    try{
+      fetch("https://magic-cursor.vercel.app/api/analitica")
+    }catch(error){
+      console.log(error)
+    }
+  },[])
+
+
   const [chosen, setChosen] = useState<string>("");
 
   type XY = {
