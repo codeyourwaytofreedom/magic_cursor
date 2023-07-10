@@ -29,8 +29,8 @@ export default async function handler(
   const mailOptions = {
     from: process.env.MAIL,
     to: process.env.ME,
-    subject: 'Cursor Project: ' + new Date().toLocaleString(),
-    text: `Visitor with IP ${requestIp.getClientIp(req)} visited cursor project at ${new Date().toLocaleString()} `
+    subject: 'Cursor Project:',
+    text: "Cursor project visited..."
   };
 
   sender.sendMail(mailOptions, (error, info) => {
