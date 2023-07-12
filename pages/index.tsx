@@ -45,7 +45,7 @@ export default function Home() {
 
   useEffect(() => {
     const handleBeforeUnload = () => {
-      fetch("/api/hm",{
+      fetch("/api/magic",{
         method:"POST",
         body:JSON.stringify({wander:wander_XYs, clicks:click_XYs})
       })
