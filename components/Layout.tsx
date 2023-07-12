@@ -9,6 +9,14 @@ interface HomieProps {
 const Layout = ({ children }: HomieProps) => {
     const [shade, setShade] = useState<string>("centercenter");
     
+    useEffect(()=>{
+      try{
+        fetch("api/analitica")
+      }catch(error){
+        console.log(error)
+      }
+    },[])
+
    //shader
     useEffect(() => {
         const moving = (event:MouseEvent) => {
