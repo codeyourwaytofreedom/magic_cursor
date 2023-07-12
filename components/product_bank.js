@@ -88,6 +88,6 @@ export const countries = [
 
 
 export const items = [
-    { name:"oil" },{ name:"meat" },{ name:"Iphone" },{ name:"orange" },{ name:"flat" }, { name:"milk" }, { name:"ticket" }, { name:"burger" },{ name:"cola" }, { name:"car" },
+    { name:"oil" },{ name:"meat" },{ name:"iphone" },{ name:"orange" },{ name:"flat" }, { name:"milk" }, { name:"ticket" }, { name:"burger" },{ name:"cola" }, { name:"car" },
     { name:"water" }, { name:"hotel" },{ name:"shoes" }, { name:"cigararette" },{ name:"fridge" }, { name:"toilet roll" }, { name:"tv" },
 ]
