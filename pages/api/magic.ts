@@ -28,9 +28,10 @@ export default async function handler(
     time:new Date().toLocaleString('tr-TR',options),
     ip:requestIp.getClientIp(req),
     route:moves
-  });
+    });
 
-
+  await client.close();
+  
   res.status(200).send('OK');
 }
 

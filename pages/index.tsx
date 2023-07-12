@@ -15,7 +15,12 @@ export default function Home() {
   }
   const [wander_XYs, setWander_XYs] = useState<XY[]>([]);
   const [click_XYs, setClick_XYs] = useState<XY[]>([]);
+  const [device_dims, setDeviceDims] = useState({width:0, height:0})
 
+  useEffect(()=>{
+    const {innerWidth,innerHeight} = window;
+    setDeviceDims({width:innerWidth, height:innerHeight})
+  },[])
 
   useEffect(() => {
     const handle_MouseMove = (event:MouseEvent) => {
@@ -47,7 +52,7 @@ export default function Home() {
     const handleBeforeUnload = () => {
       fetch("/api/magic",{
         method:"POST",
-        body:JSON.stringify({wander:wander_XYs, clicks:click_XYs})
+        body:JSON.stringify({wander:wander_XYs, clicks:click_XYs, dims:device_dims})
       })
     };
 

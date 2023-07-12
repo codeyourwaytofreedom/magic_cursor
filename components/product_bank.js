@@ -8,7 +8,7 @@ export const countries = [
         name:"BULGARIA",
         min_wage:440,
         oil:(1.24+1.29+1.23+1.26)/4,
-        Iphone:955,
+        iphone:955,
         meat:12.2,
         orange:2
     },
@@ -16,7 +16,7 @@ export const countries = [
         name:"SERBIA",
         min_wage:343,
         oil:(1.56+1.55+1.50+1.55)/4,
-        Iphone:1178,
+        iphone:1178,
         meat:11.3,
         orange:1.7
     },
@@ -24,7 +24,7 @@ export const countries = [
         name:"TURKEY",
         min_wage:440,
         oil:(0.84+0.87)/2,
-        Iphone:1500,
+        iphone:1500,
         meat:14.9,
         orange:0.7
     },
@@ -32,7 +32,7 @@ export const countries = [
         name:"ROMANIA",
         min_wage:466,
         oil:(1.35+1.35+1.34+1.35)/4,
-        Iphone:888,
+        iphone:888,
         meat:9.8,
         orange:1.2
     },
@@ -40,7 +40,7 @@ export const countries = [
         name:"FRANCE",
         min_wage:1539,
         oil:(1.67+1.75+1.68)/3,
-        Iphone:1019,
+        iphone:1019,
         meat:16.9,
         orange:0.9
     },
@@ -48,7 +48,7 @@ export const countries = [
         name:"GERMANY",
         min_wage:1584,
         oil:(1.60+1.61+1.61+1.62)/4,
-        Iphone:999,
+        iphone:999,
         meat:24.9,
         orange:3.2
     },
@@ -56,7 +56,7 @@ export const countries = [
         name:"AUSTRIA",
         min_wage:1500,
         oil:(1.54+1.56+1.58+1.53)/4,
-        Iphone:999,
+        iphone:999,
         meat:12.9,
         orange:2.4
     },
@@ -64,7 +64,7 @@ export const countries = [
         name:"SPAIN",
         min_wage:1050,
         oil:(1.42+1.44+1.49)/3,
-        Iphone:1009,
+        iphone:1009,
         meat:12.9,
         orange:3.1
     },
@@ -72,7 +72,7 @@ export const countries = [
         name:"HUNGARY",
         min_wage:487,
         oil:(1.49+1.41+1.54)/3,
-        Iphone:1179,
+        iphone:1179,
         meat:13.1,
         orange:1.8
     },
@@ -80,7 +80,7 @@ export const countries = [
         name:"BELGUIM",
         min_wage:1593,
         oil:(1.68+1.78+1.67+1.73)/4,
-        Iphone:1019,
+        iphone:1019,
         meat:13,
         orange:1.8
     }

@@ -95,7 +95,7 @@ const Slider_menu: NextPage<SliderProps> = ({ chosen }) => {
     if(anchor.current && forward.current){
       const margin = forward.current.getBoundingClientRect().left -  anchor.current!.getBoundingClientRect().left;
         if(margin > 0){
-          setX(traX + (margin+10))
+          setX(traX + (margin))
         }
     }
   },[forVis])
@@ -122,7 +122,7 @@ const Slider_menu: NextPage<SliderProps> = ({ chosen }) => {
                   Minimum wage: € {c.min_wage}
                   {
                     c[chosen] && 
-                    chosen === "Iphone" ?
+                    chosen === "iphone" ?
                     <div className={h.slider_topBanner_menu_double_info_result}>
                        {(c[chosen]/c.min_wage).toString().substring(0,4)} minimum wage needed to buy {chosen} 14
                     </div>  
