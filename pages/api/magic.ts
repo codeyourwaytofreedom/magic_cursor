@@ -13,6 +13,10 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+
+  const options = {
+    timeZone: 'Europe/Istanbul',
+  };
   
   const moves = JSON.parse(req.body);
   console.log(moves)
@@ -21,7 +25,7 @@ export default async function handler(
   const data_base = client.db('magic_cursor');
   const coll = data_base.collection('Cursor_sets');
   coll.insertOne({
-    time:new Date().toLocaleString('tr-TR'),
+    time:new Date().toLocaleString('tr-TR',options),
     ip:requestIp.getClientIp(req),
     route:moves
   });
