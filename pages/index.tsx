@@ -8,7 +8,7 @@ export default function Home() {
 
   useEffect(()=>{
     try{
-      fetch("https://magic-cursor.vercel.app/api/analitica")
+      fetch("api/analitica")
     }catch(error){
       console.log(error)
     }
