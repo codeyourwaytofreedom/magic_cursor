@@ -1,6 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { MongoClient} from "mongodb";
-import requestIp from 'request-ip';
 import nodemailer from 'nodemailer';
 
 
@@ -16,8 +15,6 @@ export default async function handler(
   res: NextApiResponse
 ) {
   
-  console.log(requestIp.getClientIp(req));
-
   const sender = nodemailer.createTransport({
     service: 'gmail',
     auth: {
