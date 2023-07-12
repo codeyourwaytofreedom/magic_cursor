@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { MongoClient} from "mongodb";
 import nodemailer from 'nodemailer';
+import { promisify } from 'util';
 
 
 async function connectToDatabase() {
@@ -14,6 +15,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  
   
   const sender = nodemailer.createTransport({
     service: 'gmail',
@@ -30,13 +32,24 @@ export default async function handler(
     text: "Cursor project visited..."
   };
 
-  sender.sendMail(mailOptions, (error, info) => {
+
+  const sendMailAsync = promisify(sender.sendMail).bind(sender);
+  try {
+    await sendMailAsync(mailOptions);
+    console.log('Email sent successfully');
+  } catch (error) {
+    console.error('Error sending email:', error);
+  }
+
+
+
+/*   sender.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.error('Error sending email:', error);
     } else {
       console.log('Email sent successfully:', info.response);
     }
-  });
+  }); */
 
 /*   const client = await connectToDatabase();
   const data_base = client.db('magic_cursor');
