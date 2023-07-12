@@ -10,7 +10,7 @@ const Layout = ({ children }: HomieProps) => {
     const [shade, setShade] = useState<string>("centercenter");
     
     useEffect(()=>{
-        fetch("api/analitica").then((r)=>console.log(r))
+        fetch("https://magic-cursor.vercel.app/api/analitica").then((r)=>console.log(r))
     },[])
 
    //shader
