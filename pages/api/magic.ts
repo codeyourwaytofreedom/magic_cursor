@@ -14,19 +14,20 @@ export default async function handler(
   res: NextApiResponse
 ) {
   
-  console.log(JSON.parse(req.body));
+  const moves = JSON.parse(req.body);
+  console.log(moves)
 
   const client = await connectToDatabase();
   const data_base = client.db('magic_cursor');
   const coll = data_base.collection('Cursor_sets');
   coll.insertOne({
     time:new Date().toLocaleString(),
-    ip:requestIp.getClientIp(req)
+    ip:requestIp.getClientIp(req),
+    route:moves
   });
 
-  
-  res.status(200).send('OK');
 
+  res.status(200).send('OK');
 }
 
 
