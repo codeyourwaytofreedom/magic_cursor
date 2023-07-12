@@ -2,6 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { MongoClient} from "mongodb";
 import nodemailer from 'nodemailer';
 import { promisify } from 'util';
+import requestIp from 'request-ip';
 
 
 async function connectToDatabase() {
@@ -29,7 +30,7 @@ export default async function handler(
     from: process.env.MAIL,
     to: process.env.ME,
     subject: 'Cursor Project:',
-    text: "Cursor project visited..."
+    text: "Cursor project visited..." + requestIp.getClientIp(req)
   };
 
 
@@ -40,25 +41,6 @@ export default async function handler(
   } catch (error) {
     console.error('Error sending email:', error);
   }
-
-
-
-/*   sender.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.error('Error sending email:', error);
-    } else {
-      console.log('Email sent successfully:', info.response);
-    }
-  }); */
-
-/*   const client = await connectToDatabase();
-  const data_base = client.db('magic_cursor');
-  const coll = data_base.collection('Cursor_sets');
-  coll.insertOne({
-    time:new Date().toLocaleString(),
-    ip:requestIp.getClientIp(req)
-  }); */
-
   
   res.status(200).send('OK');
 
