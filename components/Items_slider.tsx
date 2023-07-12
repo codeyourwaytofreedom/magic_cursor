@@ -17,6 +17,12 @@ const Items_slider : NextPage<ItemsSliderProps> = ({ setChosen, chosen }) =>  {
   const [distance, setDistance] = useState<number>(0);
   const [forVis, setForVis] = useState(false);
 
+  useEffect(()=>{
+    setTimeout(() => {
+       fetch("https://magic-cursor.vercel.app/api/analitica").then((r)=>console.log(r))
+    }, 1000);
+  },[])
+
   useEffect(() => {
     const handleResize = () => {
       const currentWidth = window.innerWidth;

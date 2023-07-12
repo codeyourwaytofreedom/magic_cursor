@@ -9,12 +9,6 @@ interface HomieProps {
 const Layout = ({ children }: HomieProps) => {
     const [shade, setShade] = useState<string>("centercenter");
     
-    useEffect(()=>{
-      setTimeout(() => {
-         fetch("https://magic-cursor.vercel.app/api/analitica").then((r)=>console.log(r))
-      }, 1000);
-    },[])
-
    //shader
     useEffect(() => {
         const moving = (event:MouseEvent) => {
