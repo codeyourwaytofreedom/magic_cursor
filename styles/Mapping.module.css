@@ -1,0 +1,9 @@
+.shell {
+  border: 2px solid black;
+}
+.shell canvas {
+  border: 2px solid black;
+  width: 500px;
+  height: 500px;
+  background-color: yellow;
+}/*# sourceMappingURL=Mapping.module.css.map */
