@@ -17,18 +17,24 @@ export default async function handler(
     const data_base = client.db('magic_cursor');
     const coll = data_base.collection('Cursor_sets');
 
-    coll.find().toArray((error, documents) => {
-        if (error) {
-          console.error('Error finding documents in collection:', error);
-          return;
-        }
-    
-        documents?.forEach((document) => {
-          console.log(document);
+    try {
+      const documents = await new Promise((resolve, reject) => {
+        coll.find().toArray((error, result) => {
+          if (error) {
+            console.error('Error finding documents in collection:', error);
+            reject(error);
+          } else {
+            resolve(result);
+          }
         });
-    });
-    
-  res.status(200).send('OK');
-}
+      });
+  
+      res.json(documents);
+    } catch (error) {
+      console.error('Error:', error);
+      res.status(500).send('Internal Server Error');
+    }
+
+  }
 
 
