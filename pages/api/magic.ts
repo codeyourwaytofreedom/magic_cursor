@@ -3,7 +3,7 @@ import { MongoClient} from "mongodb";
 import requestIp from 'request-ip';
 
 async function connectToDatabase() {
-  const client = MongoClient.connect(process.env.MD_URL!);
+  const client = await MongoClient.connect(process.env.MD_URL!);
   return client;
 }
 
@@ -29,9 +29,7 @@ export default async function handler(
     ip:requestIp.getClientIp(req),
     route:moves
     });
-
-  await client.close();
-  
+      
   res.status(200).send('OK');
 }
 
