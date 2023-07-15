@@ -27,31 +27,35 @@ const Mapping = () => {
     },[]);
 
     useEffect(()=>{
-        if(docs){
-            const test1 = docs[0].route.wander[5];
-            const test2 = docs[0].route.wander[6];
-            
+        if(docs && cnv.current){
+            const ctx = cnv.current.getContext('2d')!;
             const {innerWidth, innerHeight} = window;
+            cnv.current.width = innerWidth;
+            cnv.current.height = innerHeight;
+            ctx.strokeStyle = "blue";
+            ctx.lineWidth = 1;
 
-            if(cnv.current){
-                const ctx = cnv.current.getContext('2d')!;
-                cnv.current.width = innerWidth;
-                cnv.current.height = innerHeight;
-                
-                ctx.strokeStyle = "black";
-                ctx.lineWidth = 1;
-                
-                ctx.beginPath();
-                ctx.moveTo(test1.x, test1.y);
-                ctx.lineTo(test2.x, test2.y);
-                ctx.stroke();
+            for (let index = 0; index < docs.length; index++) {
+                for (let ii = 0; ii < docs[index].route.wander.length; ii++) {
+                    if(docs[index].route.wander[ii+1]){
+                        const doc_wanders_1 = docs[index].route.wander[ii];
+                        const doc_wanders_2 = docs[index].route.wander[ii+1];
+    
+                        ctx.beginPath();
+                        ctx.moveTo(doc_wanders_1.x, doc_wanders_1.y);
+                        ctx.lineTo(doc_wanders_2.x, doc_wanders_2.y);
+                        ctx.stroke();
+                    }
+                }
             }
         }
     },[docs]);
     
     return ( 
         <>
-            <canvas ref={cnv} style={{background:"wheat"}}></canvas>             
+            <div className={m.shell}>
+                <canvas ref={cnv}></canvas>   
+            </div>       
         </>
      );
 }
