@@ -32,7 +32,7 @@ const Mapping = () => {
             const {innerWidth, innerHeight} = window;
             cnv.current.width = innerWidth;
             cnv.current.height = innerHeight;
-            ctx.strokeStyle = "blue";
+            ctx.strokeStyle = "white";
             ctx.lineWidth = 1;
 
             for (let index = 0; index < docs.length; index++) {
@@ -50,11 +50,16 @@ const Mapping = () => {
             }
         }
     },[docs]);
+
+    const temp = false;
     
     return ( 
         <>
             <div className={m.shell}>
-                <canvas ref={cnv}></canvas>   
+                {
+                    docs ? <canvas ref={cnv}></canvas>   : "Loading..."
+                }
+                
             </div>       
         </>
      );

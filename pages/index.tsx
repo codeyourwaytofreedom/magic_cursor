@@ -7,7 +7,7 @@ import Slider_menu from '../components/slider';
 export default function Home() {
 
 
-  const [chosen, setChosen] = useState<string>("");
+  const [chosen, setChosen] = useState<string>("oil");
 
   type XY = {
     x:number,
@@ -75,8 +75,8 @@ export default function Home() {
             <Layout>
               <Items_slider setChosen={setChosen} chosen={chosen}/>
               <Slider_menu chosen={chosen} />
-              <h1>{wander_XYs.length}</h1>
-            </Layout>
+{/*               <h1>{wander_XYs.length}</h1>
+ */}            </Layout>
       </main>
     </>
   )

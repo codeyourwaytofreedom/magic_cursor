@@ -23,7 +23,7 @@ export const countries = [
     {
         name:"TURKEY",
         min_wage:440,
-        oil:(0.84+0.87)/2,
+        oil:1.06,
         iphone:1500,
         meat:14.9,
         orange:0.7

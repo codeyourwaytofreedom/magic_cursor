@@ -1,6 +1,28 @@
 .shell{
+    background-color: black;
+    height: 100vh;
+    color:gold;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    animation: glowing 2s ease-in-out infinite;
     canvas{
         width: 100% !important;
         height: 100% !important;
     }
 }
+
+@keyframes glowing {
+    0% {
+      text-shadow: 0 0 5px rgba(255, 255, 0, 0.8); /* Yellow shadow */
+      font-size: 60px;
+    }
+    50% {
+      text-shadow: 0 0 20px rgba(255, 255, 0, 0.8); /* Yellow shadow */
+      font-size: 70px;
+    }
+    100% {
+      text-shadow: 0 0 5px rgba(255, 255, 0, 0.8); /* Yellow shadow */
+      font-size: 60px;
+    }
+  }
